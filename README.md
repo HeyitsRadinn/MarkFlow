@@ -7,7 +7,7 @@ MarkFlow is built with Next.js and deployed on Cloudflare.
 1. Clone the repository:
 
    ```
-   git clone https://github.com/your-username/markflow.git
+   git clone https://github.com/HeyitsRadinn/MarkFlow.git
    cd markflow
    ```
 
