@@ -6,3 +6,15 @@ compatibility_date = "2023-01-01"
 binding = "DB"
 database_name = "markflow-database"
 database_id = "bafcf158-f083-4c29-b7ff-f266797c3fd8"
+
+[site]
+bucket = "out"
+
+[build]
+command = "npm run build"
+
+[functions]
+directory = "functions"
+
+[build.upload]
+format = "service-worker"

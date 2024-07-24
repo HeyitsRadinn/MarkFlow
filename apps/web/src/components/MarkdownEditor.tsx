@@ -1,30 +1,27 @@
-import React, { useState } from 'react';
-import CodeMirror from '@uiw/react-codemirror';
-import { markdown, markdownLanguage } from '@codemirror/lang-markdown';
-import { languages } from '@codemirror/language-data';
-import { marked } from 'marked';
+"use client";
 
-const MarkdownEditor: React.FC = () => {
-  const [markdownContent, setMarkdownContent] = useState('# Hello, MarkFlow!');
+import React from "react";
+import CodeMirror from "@uiw/react-codemirror";
+import { markdown, markdownLanguage } from "@codemirror/lang-markdown";
+import { languages } from "@codemirror/language-data";
 
-  const handleChange = React.useCallback((value: string) => {
-    setMarkdownContent(value);
-  }, []);
+interface MarkdownEditorProps {
+  value: string;
+  onChange: (value: string) => void;
+}
 
+const MarkdownEditor: React.FC<MarkdownEditorProps> = ({ value, onChange }) => {
   return (
-    <div className="flex h-screen">
-      <div className="w-1/2 p-4">
-        <CodeMirror
-          value={markdownContent}
-          height="100%"
-          extensions={[markdown({ base: markdownLanguage, codeLanguages: languages })]}
-          onChange={handleChange}
-        />
-      </div>
-      <div className="w-1/2 p-4 overflow-auto">
-        <div dangerouslySetInnerHTML={{ __html: marked(markdownContent) }} />
-      </div>
-    </div>
+    <CodeMirror
+      value={value}
+      height="100%"
+      extensions={[
+        markdown({ base: markdownLanguage, codeLanguages: languages }),
+      ]}
+      onChange={(val) => onChange(val)}
+      theme="dark"
+      className="h-full"
+    />
   );
 };
 
