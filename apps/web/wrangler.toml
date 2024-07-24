@@ -1,0 +1,8 @@
+name = "markflow-worker"
+main = "worker/index.ts"
+compatibility_date = "2023-01-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "markflow-database"
+database_id = "bafcf158-f083-4c29-b7ff-f266797c3fd8"

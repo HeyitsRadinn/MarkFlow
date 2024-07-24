@@ -1,0 +1,29 @@
+{
+  "name": "markflow",
+  "version": "0.0.1",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "@cloudflare/d1": "^1.4.1",
+    "prettier": "^2.8.8",
+    "turbo": "^1.10.0",
+    "wrangler": "^3.66.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "@auth/core": "^0.34.1",
+    "@cloudflare/workers-types": "^4.20240722.0",
+    "drizzle-orm": "^0.32.1"
+  }
+}
